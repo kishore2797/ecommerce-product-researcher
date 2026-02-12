@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: ecommerce-product-researcher-api
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.7"
+    healthCheckPath: "/api/v1/health"
+    autoDeploy: true
